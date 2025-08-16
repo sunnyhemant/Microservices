@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kafkaProduct.DTO.ProductRequest;
 import com.kafkaProduct.DTO.ProductResponse;
-import com.kafkaProduct.entity.Product;
 import com.kafkaProduct.service.ProductService;
 
 @RestController
@@ -48,5 +47,10 @@ public class ProductController {
     	productService.deleteById(id);
 		return ResponseEntity.ok("Product deleted..");
     	
+    }
+    @GetMapping("/name/{id}")
+    public ResponseEntity<String> getProductNameById(@PathVariable Long id) {
+        String name = productService.getProductNameById(id);
+        return ResponseEntity.ok(name);
     }
 }

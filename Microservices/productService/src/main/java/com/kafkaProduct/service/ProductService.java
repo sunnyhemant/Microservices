@@ -47,4 +47,10 @@ public class ProductService {
 		productRepository.deleteById(id);
 
 	}
+
+    public String getProductNameById(Long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
+        return product.getName();
+    }
 }
