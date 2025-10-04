@@ -17,7 +17,7 @@ import com.kafkaProduct.DTO.ProductResponse;
 import com.kafkaProduct.service.ProductService;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api/product")
 public class ProductController {
 
     private final ProductService productService;
