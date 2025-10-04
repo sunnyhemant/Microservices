@@ -31,7 +31,7 @@ public class ProductController {
         productService.createProduct(request);
         return ResponseEntity.ok("Product created successfully");
     }
-
+    //pull the product list from repo
     @GetMapping("/productsList")
     public List<ProductResponse> getAllProducts() {
         return productService.getAllProducts();
